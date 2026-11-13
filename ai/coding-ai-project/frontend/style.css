@@ -1,0 +1,147 @@
+* {
+    box-sizing: border-box;
+    font-family: Tahoma, Arial, sans-serif;
+}
+
+body {
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 900px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 90vh;
+    border: 1px solid #333;
+}
+
+header {
+    background-color: #252526;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+}
+
+header h1 {
+    font-size: 18px;
+    margin: 0;
+    color: #4fc3f7;
+}
+
+.controls {
+    display: flex;
+    gap: 10px;
+}
+
+select, button {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+select {
+    background-color: #333;
+    color: #fff;
+}
+
+.primary-btn {
+    background-color: #0288d1;
+    color: white;
+}
+
+.primary-btn:hover {
+    background-color: #0277bd;
+}
+
+.secondary-btn {
+    background-color: #2e7d32;
+    color: white;
+}
+
+.secondary-btn:hover {
+    background-color: #1b5e20;
+}
+
+.danger-btn {
+    background-color: #c62828;
+    color: white;
+}
+
+.danger-btn:hover {
+    background-color: #b71c1c;
+}
+
+#chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.message {
+    padding: 12px 16px;
+    border-radius: 8px;
+    max-width: 85%;
+    line-height: 1.6;
+}
+
+.user-message {
+    background-color: #01579b;
+    align-self: flex-start;
+    color: #fff;
+}
+
+.ai-message {
+    background-color: #2d2d30;
+    align-self: flex-end;
+    width: 100%;
+    max-width: 100%;
+}
+
+.ai-message pre {
+    direction: ltr;
+    text-align: left;
+    background-color: #1a1a1a;
+    padding: 12px;
+    border-radius: 6px;
+    overflow-x: auto;
+}
+
+footer {
+    padding: 15px;
+    background-color: #252526;
+    border-top: 1px solid #333;
+}
+
+textarea {
+    width: 100%;
+    background-color: #1e1e1e;
+    color: #fff;
+    border: 1px solid #444;
+    border-radius: 6px;
+    padding: 10px;
+    resize: none;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.action-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-end;
+}
