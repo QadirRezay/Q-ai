@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>دستیار هوش مصنوعی کدنویسی</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>دستیار هوش مصنوعی کدنویسی</h1>
+            <div class="controls">
+                <select id="language-select">
+                    <option value="Python">Python</option>
+                    <option value="JavaScript">JavaScript</option>
+                    <option value="HTML/CSS">HTML / CSS</option>
+                    <option value="C++">C++</option>
+                    <option value="Java">Java</option>
+                    <option value="SQL">SQL</option>
+                </select>
+                <button id="clear-btn" class="danger-btn">پاک کردن حافظه</button>
+            </div>
+        </header>
+
+        <main id="chat-box">
+            <div class="message ai-message">
+                سلام! تاریخچه گفتگوهای شما به‌صورت خودکار ذخیره می‌شود. زبان برنامه‌نویسی را انتخاب کنید و دستور خود را بنویسید.
+            </div>
+        </main>
+
+        <footer>
+            <textarea id="prompt-input" rows="3" placeholder="مثلاً: یک تابع پایتون بنویس که اعداد اول را پیدا کند..."></textarea>
+            <div class="action-buttons">
+                <button id="send-btn" class="primary-btn">ارسال درخواست</button>
+                <button id="download-txt-btn" class="secondary-btn">دانلود نوت‌پد (.txt)</button>
+                <button id="download-pdf-btn" class="secondary-btn">دانلود PDF</button>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
