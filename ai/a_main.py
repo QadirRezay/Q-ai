@@ -358,3 +358,10 @@ async def reset_memory(session_id: str, db: DB):
         raise HTTPException(status.HTTP_400_BAD_REQUEST, "invalid session_id")
     await db.clear(session_id)
     return {"status": "cleared", "message": "حافظه گفتگو پاک شد."}
+# Mounting Frontend (Serving HTML/CSS/JS)
+import os
+from fastapi.staticfiles import StaticFiles
+
+frontend_dir = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend"))
+if os.path.exists(frontend_dir):
+    app.mount("/", StaticFiles(directory=frontend_dir, html=True), name="frontend")
