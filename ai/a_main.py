@@ -18,8 +18,8 @@ from pydantic import BaseModel, Field, field_validator
 from fpdf import FPDF
 
 # توابع فعلی شما — بعداً می‌توانیم جایگزین کنیم بدون دست زدن به endpointها
-from app.ai_engine import generate_code_response
-from app.database import get_chat_history, clear_history
+from ai_engine import generate_code_response
+from database import get_chat_history, clear_history
 
 
 # ============================================================
@@ -46,13 +46,8 @@ ALLOWED_LANGUAGES = {
     "c", "cpp", "csharp", "php", "ruby", "kotlin", "swift", "sql",
     "html", "css", "bash",
 }
-ALLOWED_ORIGINS = [
-    o.strip()
-    for o in os.getenv(
-        "ALLOWED_ORIGINS", "http://localhost:3000,http://localhost:5173"
-    ).split(",")
-    if o.strip()
-]
+
+ALLOWED_ORIGINS = ["http://127.0.0.1:5501", "http://localhost:5501", "http://127.0.0.1:5500"]
 
 _SESSION_ID_RE = re.compile(r"^[A-Za-z0-9_\-]{1,64}$")
 
@@ -240,7 +235,14 @@ async def lifespan(app: FastAPI):
 # ============================================================
 # 9) App + middleware
 # ============================================================
-app = FastAPI(title="Coding AI Server", version="1.2.0", lifespan=lifespan)
+app = FastAPI(
+    title="Coding AI Server",
+    version="1.2.0",
+    lifespan=lifespan,
+    docs_url=None,
+    redoc_url=None,
+    openapi_url=None
+)
 
 app.add_middleware(
     CORSMiddleware,

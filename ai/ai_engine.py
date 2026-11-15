@@ -1,7 +1,7 @@
 import os
 from openai import OpenAI
 from dotenv import load_dotenv
-from app.database import save_message, get_chat_history
+from database import save_message, get_chat_history
 
 load_dotenv()
 
